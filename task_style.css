@@ -1,0 +1,22 @@
+body {
+    background-color: #6f9e80;
+    margin: 0;
+    font-family: sans-serif;
+    margin: 10px;
+  } 
+  
+select{
+    margin-top: 20px;
+    display: block;
+}
+  
+.fields{
+    margin-top: 10px;
+}
+  
+p {
+    display: inline-block;
+}
+  
+  
+  
