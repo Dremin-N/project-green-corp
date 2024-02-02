@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Солнечные батареи GreenCorp</title>
     <link rel="stylesheet" href="style1.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
     <header>
-        <img src="logo.svg" alt="logo" class="header_logo">
+        <img src="images/logo.svg" alt="logo" class="header_logo">
 
         <div>
             <a href="#contacts">Контакты</a>
@@ -19,7 +22,7 @@
             </button>
         </div>
     </header>
-    
+
     <section class="about">
 
         <div class="about_info">
@@ -28,27 +31,51 @@
             <button>Узнать подробнее</button>
         </div>
         <div>
-            <img class="about_sun_img" src="sun.png" alt="sun">
-            <img class="about_img" src="solar-panel.png" alt="solar-panel">
+            <img class="about_sun_img" src="images/sun.png" alt="sun">
+            <img class="about_img" src="images/solar-panel.png" alt="solar-panel">
         </div>
 
     </section>
 
-    <form action="">
-        <h2>
+    <section class="form">
 
-        </h2>
-        <p>
+        <div class="form__container">
+            <h2>
+                Оставьте свои контакты
+            </h2>
+            <p>
+                Поможем подобрать модель.<br>Выбрать удобный вариант доставки и установки.<br>Гарантия возврата денег.
+            </p>
 
-        </p>
-        <input type="text" placeholder="Введите имя">
-        <input type="email">
-        <input type="tel">
-        <input type="tel">
-        <button type="submit">
-            Отправить заявку
-        </button>
-    </form>
+            <form class="form__flex">
+                <div class="form__group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" placeholder="Введите имя" id="name">
+                </div>
+                <div class="form__group">
+                    <label for="email">Электронный адрес</label>
+                    <input type="email" placeholder="***@yandex.ru" id="email">
+                </div>
+                <div class="form__group">
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" placeholder="7(999)999-99-99" id="phone">
+                </div>
+                <div class="form__group">
+                    <label for="budget">Примерный бюджет</label>
+                    <select id="budget">
+                        <option value="10-30">10 000&#8381; - 30 000&#8381;</option>
+                        <option value="30-60">30 000&#8381; - 60 000&#8381;</option>
+                        <option value="60-100">60 000&#8381; - 100 000&#8381;</option>
+                    </select>
+                </div>
+                <button class="form__submit" type="submit">
+                    Отправить заявку
+                </button>
+            </form>
+        </div>
+
+    </section>
 
 </body>
+
 </html>
