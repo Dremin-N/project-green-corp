@@ -79,3 +79,8 @@ button {
     height: 100px;
     align-self: flex-end;
 }
+
+.about {
+    display: flex;
+    font-size: larger;
+}
