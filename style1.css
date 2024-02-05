@@ -74,11 +74,23 @@ button {
   width: 500px;
 }
 
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .about_sun_img {
   width: 100px;
   height: 100px;
-  position: relative;
-  bottom: 250px;
+  animation-name: rotation;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 .form {
@@ -161,7 +173,7 @@ input {
 button:hover {
   background-color: #f6980c;
   box-shadow: 0 16px 36px rgba(246, 152, 12, 0.2);
-  transition: background-color 0.3s ease-in;
+  transition: background-color 0.2s ease-in;
 }
 
 footer {

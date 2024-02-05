@@ -187,3 +187,27 @@ select {
 .new_checkbox input:checked + label {
   background-color: #2ecc71;
 }
+
+@keyframes loader {
+  0% {
+    width: 0px;
+  }
+  70% {
+    width: 100%;
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+    width: 100%;
+  }
+  100% {
+    opacity: 0;
+    width: 0px;
+  }
+}
+
+.loader {
+  height: 20px;
+  background-color: #fff;
+  animation: loader 7s ease-in-out infinite;
+}
