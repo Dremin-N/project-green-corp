@@ -77,7 +77,8 @@ button {
 .about_sun_img {
   width: 100px;
   height: 100px;
-  align-self: flex-end;
+  position: relative;
+  bottom: 250px;
 }
 
 .form {
