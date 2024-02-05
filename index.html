@@ -48,29 +48,31 @@
             </p>
 
             <form class="form__flex">
-                <div class="form__group">
-                    <label for="name">Ваше имя</label>
-                    <input type="text" placeholder="Введите имя" id="name">
+                <div class="form__form">
+                    <div class="form__group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" placeholder="Введите имя" id="name">
+                    </div>
+                    <div class="form__group">
+                        <label for="email">Электронный адрес</label>
+                        <input type="email" placeholder="***@yandex.ru" id="email">
+                    </div>
+                    <div class="form__group">
+                        <label for="phone">Номер телефона</label>
+                        <input type="tel" placeholder="7(999)999-99-99" id="phone">
+                    </div>
+                    <div class="form__group">
+                        <label for="budget">Примерный бюджет</label>
+                        <select id="budget">
+                            <option value="10-30">10 000&#8381; - 30 000&#8381;</option>
+                            <option value="30-60">30 000&#8381; - 60 000&#8381;</option>
+                            <option value="60-100">60 000&#8381; - 100 000&#8381;</option>
+                        </select>
+                    </div>
+                    <button class="form__submit" type="submit">
+                        Отправить заявку
+                    </button>
                 </div>
-                <div class="form__group">
-                    <label for="email">Электронный адрес</label>
-                    <input type="email" placeholder="***@yandex.ru" id="email">
-                </div>
-                <div class="form__group">
-                    <label for="phone">Номер телефона</label>
-                    <input type="tel" placeholder="7(999)999-99-99" id="phone">
-                </div>
-                <div class="form__group">
-                    <label for="budget">Примерный бюджет</label>
-                    <select id="budget">
-                        <option value="10-30">10 000&#8381; - 30 000&#8381;</option>
-                        <option value="30-60">30 000&#8381; - 60 000&#8381;</option>
-                        <option value="60-100">60 000&#8381; - 100 000&#8381;</option>
-                    </select>
-                </div>
-                <button class="form__submit" type="submit">
-                    Отправить заявку
-                </button>
             </form>
         </div>
 
