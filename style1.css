@@ -8,63 +8,6 @@ header {
   top: 0px;
   z-index: 1;
 }
-@media (max-width: 2560px) {
-  .header_logo {
-    height: 30px;
-  }
-
-  .about h1 {
-    font-size: 70px;
-    line-height: 76px;
-  } 
-  
-  .about_sun_img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .about_img {
-    width: 500px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .header_logo {
-    height: 30px;
-  }
-
-  .about h1 {
-    font-size: 36px;
-    line-height: 40px;
-  }
-
-  .about_sun_img {
-    width: 75px;
-    height: 75px;
-  }
-  .about_img {
-    width: 280px;
-  } 
-}
-
-@media (max-width: 720px) {
-  .header_logo {
-    height: 20px;
-  }
-
-  .about h1 {
-    font-size: 36px;
-    line-height: 40px;
-  }
-
-  .about_sun_img {
-    width: 75px;
-    height: 75px;
-  }
-  .about_img {
-    width: 280px;
-  } 
-}
 
 body {
   font-family: "Raleway", sans-serif;
@@ -103,7 +46,6 @@ button {
   background: url("images/back.png") no-repeat;
   background-position: center;
   background-size: cover;
-  
 }
 
 .about_info {
@@ -269,4 +211,79 @@ footer {
 
 .footer__links a {
   margin-bottom: 15px;
+}
+
+@media (max-width: 720px) {
+  header {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+  }
+
+  header button {
+    padding: 8px;
+  }
+
+  header div {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+
+  .header_logo {
+    height: 20px;
+    padding-top: 5px;
+  }
+  .about {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .about h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .about_sun_img {
+    width: 75px;
+    height: 75px;
+  }
+  .about_img {
+    width: 280px;
+  }
+
+  .form__container {
+    padding: 0 15px;
+  }
+
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header_logo {
+    height: 30px;
+  }
+
+  .about {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .about h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .about_sun_img {
+    width: 75px;
+    height: 75px;
+  }
+  .about_img {
+    width: 280px;
+  }
 }
