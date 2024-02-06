@@ -3,10 +3,67 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  position: sticky;
+  background-color: #fff;
+  top: 0px;
+  z-index: 1;
+}
+@media (max-width: 2560px) {
+  .header_logo {
+    height: 30px;
+  }
+
+  .about h1 {
+    font-size: 70px;
+    line-height: 76px;
+  } 
+  
+  .about_sun_img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .about_img {
+    width: 500px;
+  }
 }
 
-.header_logo {
-  height: 30px;
+@media (max-width: 1024px) {
+  .header_logo {
+    height: 30px;
+  }
+
+  .about h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .about_sun_img {
+    width: 75px;
+    height: 75px;
+  }
+  .about_img {
+    width: 280px;
+  } 
+}
+
+@media (max-width: 720px) {
+  .header_logo {
+    height: 20px;
+  }
+
+  .about h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .about_sun_img {
+    width: 75px;
+    height: 75px;
+  }
+  .about_img {
+    width: 280px;
+  } 
 }
 
 body {
@@ -43,9 +100,10 @@ button {
   justify-content: space-around;
   align-items: center;
   padding: 115px 0px;
-  background: url("back.png") no-repeat;
+  background: url("images/back.png") no-repeat;
   background-position: center;
   background-size: cover;
+  
 }
 
 .about_info {
@@ -91,6 +149,7 @@ button {
   animation-duration: 10s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  position: absolute;
 }
 
 .form {
