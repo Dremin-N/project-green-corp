@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    function getRandom(max = 10, min = 0) {
+      // 0 <= x < 10
+      return Math.floor(Math.random() * (max - min) + min)
+    }
+    function getColor(a = 100) {
+      let r = getRandom(256),
+        g = getRandom(256),
+        b = getRandom(256);
+      return `rgb(${r}, ${g}, ${b}, ${a / 100})`;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Hello JS!</h1>
+  1. Создать переменную num, в которой хранится любое число в диапазоне от 4 до 1067.
+  2. при помощи переменной num написать фразу "По шоссе едет num машин"
+  <script src="example.js"></script>
+  <script>
+    document.body.style.background = getColor(getRandom(101));
+  </script>
+</body>
+
+</html>
