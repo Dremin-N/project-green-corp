@@ -377,7 +377,108 @@ console.log(sum_simple_digits);
 
 let min_max_list = [2, 45, 3, 23, 6];
 
-let min = 100000;
-let max = 0;
+let min = min_max_list[0];
+let max = min_max_list[0];
 
-console.log(Math.max(min_max_list));
+for (let i = 1; i < min_max_list.length; i++) {
+  if (min_max_list[i] > max) {
+    max = min_max_list[i];
+  } else if (min_max_list[i] < min) {
+    min = min_max_list[i];
+  }
+}
+
+console.log(max + min);
+
+//! Задача 9.8
+//* 1 Метод
+let list_9_8 = [2, 45, 3, 23, 6];
+
+let new_list = [];
+
+// for (let el in list_9_8) {
+//   new_list.unshift(list_9_8[el]);
+// }
+
+// console.log(new_list);
+
+//* 2 Метод
+for (let i = list_9_8.length - 1; i >= 0; i--) {
+  new_list.push(list_9_8[i]);
+}
+console.log(new_list);
+
+//* Метод 3
+
+console.log(list_9_8.reverse());
+
+//! Задача 9.9
+
+let sentence = "Завтра будет лучше чем вчера";
+
+//* Метод 1
+console.log(sentence.split(" "));
+
+//* Метод 2
+let list_sentence = [];
+let word = "";
+for (let el in sentence) {
+  if (sentence[el] !== " ") {
+    word += sentence[el];
+  } else {
+    list_sentence.push(word);
+    word = "";
+  }
+}
+list_sentence.push(word);
+console.log(list_sentence);
+
+//! Задача 9.10
+
+let list_number = [2, 45, 3, 24, 6];
+
+function count(list) {
+  let counter = 0;
+  for (let i in list) {
+    if (Number(list[i]) % 2 === 0) {
+      counter += 1;
+    }
+  }
+  return counter;
+}
+
+console.log(count(list_number));
+
+//! Задача 9.11
+
+function average(list) {
+  let sum = 0;
+  for (let i in list) {
+    sum += list[i];
+  }
+  return Math.round(sum / list.length);
+}
+
+console.log(average(list_number));
+
+//! Задача 9.12
+
+list_number = [2, 54, 2, 54, false, 2];
+let sum_1 = 0;
+for (let i in list_number) {
+  if (Number.isFinite(list_number[i])) {
+    sum_1 += list_number[i];
+  } else if (list_number[i] === false) {
+    break;
+  }
+}
+console.log(sum_1);
+
+//! Задача 9.13
+
+new_list = [];
+
+for (let i = 10; i <= 20; i++) {
+  new_list.push(i);
+}
+console.log(new_list);
