@@ -312,7 +312,9 @@ for (let el in list) {
 console.log(newResult);
 
 //! задача 9.3
+const getNumber = (max, min) => Math.floor(math.random() * (max - min) + min);
 
+let c
 // let list = [23, 163, 3];
 // let summ = 0;
 // for (let el in list) {
@@ -482,3 +484,42 @@ for (let i = 10; i <= 20; i++) {
   new_list.push(i);
 }
 console.log(new_list);
+
+//! Задача 9.14  !!!!!!!!!!!!!
+
+list = [2, "привет", 23, true, 2, false, 2];
+let true_list = [];
+for (let i in list) {
+  if (list[i] !== false && Number.isFinite(list[i])) {
+    true_list.push(list[i]);
+  } else if (Number.isFinite(list[i]) === false) {
+  } else {
+    break;
+  }
+}
+console.log(true_list);
+
+//! Задача 9.15
+list = ["Лёша", "default", "полке", "клопа", "нашёл"];
+
+function none_default(list) {
+  let counter = 0;
+  for (let i in list) {
+    if (list[i].toLowerCase() === "default") {
+    } else {
+      counter += 1;
+    }
+  }
+  return counter;
+}
+console.log(none_default(list));
+
+//! Задача 9.16
+
+list = ["почтовый", "желание", "абсолютный", "закрытый"];
+let new_string = "";
+
+for (let i in list) {
+  new_string += list[i][0];
+}
+console.log(new_string);
