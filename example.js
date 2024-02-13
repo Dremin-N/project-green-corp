@@ -312,9 +312,7 @@ for (let el in list) {
 console.log(newResult);
 
 //! задача 9.3
-const getNumber = (max, min) => Math.floor(math.random() * (max - min) + min);
 
-let c
 // let list = [23, 163, 3];
 // let summ = 0;
 // for (let el in list) {
@@ -489,13 +487,13 @@ console.log(new_list);
 
 list = [2, "привет", 23, true, 2, false, 2];
 let true_list = [];
-for (let i in list) {
-  if (list[i] !== false && Number.isFinite(list[i])) {
-    true_list.push(list[i]);
-  } else if (Number.isFinite(list[i]) === false) {
-  } else {
+for (let value of list) {
+  if (typeof value === "boolean" && value === false) {
     break;
+  } else if (Number.isFinite(value)) {
+    true_list.push(value);
   }
+  console.log(typeof value);
 }
 console.log(true_list);
 

@@ -115,7 +115,6 @@ console.log(words);
 
 //! https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D1%82%D0%BE_%D0%AD%D1%80%D0%B0%D1%82%D0%BE%D1%81%D1%84%D0%B5%D0%BD%D0%B0 Решето Эратосфена
 
-
 /* роману от 0 до 15 лет 
 Каждый день рождения Роману родители дарят на 1000 больше чем в прошлом году
 Роман копит на квартиру 
@@ -128,3 +127,31 @@ console.log(words);
 
 Во сколько лет Роман накопит на квартиру
 */
+
+const getNumber = (max, min = 0) =>
+  Math.floor(Math.random() * (max - min) + min);
+
+let flat = 6000000;
+let age = 1;
+let birthday = 1000;
+let salary = getNumber(30000, 19242);
+let expenses = 15000;
+let multiply = 1.2;
+let up = 0;
+
+while (flat > 0) {
+  flat -= birthday;
+  birthday += 1000;
+  if (age > 18) {
+    if (getNumber(3, 1) === 2) {
+      salary *= multiply;
+    }
+  }
+  if (age >= 18) {
+    flat -= (salary - 15000) * 12;
+  }
+  age += 1;
+  console.log(flat);
+}
+
+console.log(age);
