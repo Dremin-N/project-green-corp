@@ -469,8 +469,8 @@ footer {
     width: 100%;
     box-sizing: border-box;
   }
-
 }
+
 @media (max-width: 1024px) {
   .header_logo {
     height: 30px;

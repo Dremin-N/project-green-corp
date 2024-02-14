@@ -152,6 +152,7 @@ while (flat > 0) {
   }
   age += 1;
   console.log(flat);
+  console.log();
 }
 
 console.log(age);
