@@ -187,7 +187,6 @@ console.log(result);
 let values_numbers = [10, 3032, 185, 11200, 980, 1002];
 
 const four_digits = values_numbers.some((val) => val >= 1000 && val <= 9999);
-let reg = /\d\d\d\d/;
 if (four_digits === false) {
   console.log("Искомый элемент не был найден");
 } else {
