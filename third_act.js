@@ -226,3 +226,65 @@ array.sort(sortBylength);
 console.log(array);
 
 //! Задача 2.10 В программе задана переменная randValues, которая хранит в себе массив. Его элементы могут являться как строковыми, так и числовыми значениями. Отсортируйте массив следующим образом: В начале массива должны быть все числовые значения по возрастанию В конце все строковые, упорядоченные по алфавиту Результат выведите в консоль.
+
+let randValues = ["Банан", 3, "Апельсин", 2, "Вишня"];
+
+// console.log(randValues.sort());
+console.log(randValues);
+
+//* 2 Метод
+
+let numbers = [];
+let strings = [];
+
+randValues.forEach((e) => (isNaN(e) ? strings : numbers).push(e));
+
+numbers = numbers.sort((a, b) => Number(a) - Number(b));
+strings = strings.sort();
+
+randValues = numbers.concat(strings);
+console.log(randValues);
+
+//! Задача 2.11 В программе задана переменная words, которая хранит в себе массив строковых значений. Напишите скрипт, который считает количество палиндромов и непалиндромов в массиве words. Результат должен представлять собой массив из двух элементов, где первое значение — количество палиндромов, а второе — непалиндромов.
+
+const str = ["Заказ", "Такси", "Доход"];
+
+let counter = 0;
+function pal(pal) {
+  let paliondrom = "";
+  for (let i = pal.length - 1; i >= 0; i--) {
+    paliondrom += pal[i];
+  }
+  if (pal.toLowerCase() === paliondrom.toLowerCase()) {
+    counter += 1;
+  }
+}
+
+for (let i = 0; i < str.length; i++) {
+  pal(str[i]);
+}
+
+const result_paleo = [];
+result_paleo.push(counter, str.length - counter);
+
+console.log(result_paleo);
+
+//! Задача 2.12 В программе задана переменная dates, которая хранит в себе строковое значение. В данной строке хранятся значения дат в формате ДД:ММ:ГГГГ, которые разделены пробелами. На основе значения переменной dates сформируйте новый массив, каждый элемент которого содержит одну дату переменной dates, преобразованную в формат ДД/ММ/ГГГГ. Выведите содержимое сформированного массива в консоль.
+
+let dates = "23.04.1996 07.10.2002 15.08.1945";
+const date = dates.split(" ");
+
+for (let i = 0; i < date.length; i++) {
+  let stringDate;
+  stringDate = date[i].split(".").join("/");
+  date[i] = stringDate;
+}
+console.log(date);
+
+//! Задача 2.13 В программе задана переменная tickets, которая хранит в себе строковое значение. В этой переменной указаны номера билетов на поезд (после слова Train) и на самолет (после слова Airplane). Необходимо написать скрипт, который на основе строки из переменной tickets формирует объект. Он должен хранить в себе два ключа (train, airplane), а в качестве значений — массивы с номерами билетов для поезда и самолета соответственно.
+
+let tickets = "Train: AV432, FS452, OE402. Airplane: DR578, JN1089, NDK140.";
+
+let ticketss = tickets.split(".");
+ticketss.pop();
+console.log(ticketss);
