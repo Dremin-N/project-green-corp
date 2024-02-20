@@ -287,3 +287,62 @@ let tickets = "Train: AV432, FS452, OE402. Airplane: DR578, JN1089, NDK140.";
 let ticketss = tickets.split(".");
 ticketss.pop();
 console.log(ticketss);
+
+//! Задача 2.14 В программе задана переменная numbers, которая хранит массив из чисел. Определите, какое максимальное количество элементов массива numbers (в порядке, который реализован в массиве) можно сложить, чтобы их итоговая сумма не превышала 50. Результат выведите в консоль.
+
+numbers = [10, 20, 33, 55, 100];
+let count_sum = 0;
+const counter_max = numbers.reduce(function (acc, currentValue) {
+  if (count_sum + currentValue <= 50) {
+    count_sum += currentValue;
+    return acc + 1;
+  } else {
+    return acc;
+  }
+}, 0);
+console.log(counter_max);
+
+//! Задача 2.15 В программе задана переменная values, которая хранит массив из строк. Определите математическую сумму всех элементов, которые при преобразовании в число не вернут значение NaN. Результат выведите в консоль.
+
+let values_nums = ["100", "30", "Не число", "20", "Тоже не число"];
+
+const sum_values = values_nums.reduce(function (acc, curr) {
+  if (isNaN(curr)) {
+    return acc;
+  } else {
+    return acc + Number(curr);
+  }
+}, 0);
+console.log(sum_values);
+
+//! ЗАдача 2.16 В программе заданы два массива array_1 и array_2, элементы которого являются числами. Значения внутри одного массива уникальные. Реализуйте функцию intersection, которая принимает в качестве аргументов два массива и возвращает новый массив. Он должен содержать значения, которые встречаются в обоих массивах-аргументах, и быть отсортирован по убыванию.
+
+function intersection(array_1, array_2) {
+  const includeElements = array_1.filter(function (element) {
+    return array_2.includes(element);
+  });
+
+  includeElements.sort((a, b) => b - a); // Сортировка по убыванию
+
+  return includeElements;
+}
+
+let array_1 = [2, 4, 7, 8, 1];
+
+let array_2 = [2, 5, 11, 6, 1];
+
+console.log(intersection(array_1, array_2));
+
+//! Использование метода массива Array.from - возвращает новый массив через функцию
+const filmsFromServer = [
+  { viewed: false, title: "Назад в будущее", durationInMinutes: 116 },
+  { viewed: false, title: "12 разгневанных мужчин", durationInMinutes: 96 },
+  { viewed: true, title: "Мэри и Макс", durationInMinutes: 92 },
+];
+
+const putRating = (film) => {
+  return film.viewed ? { ...film, rating: "Рейтинг не проставлен" } : film;
+};
+
+const filmsWithRating = Array.from(filmsFromServer, (el) => putRating(el));
+console.log(filmsWithRating);
