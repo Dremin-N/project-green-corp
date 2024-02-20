@@ -340,9 +340,118 @@ const filmsFromServer = [
   { viewed: true, title: "Мэри и Макс", durationInMinutes: 92 },
 ];
 
-const putRating = (film) => {
-  return film.viewed ? { ...film, rating: "Рейтинг не проставлен" } : film;
+const putRating = (el) => {
+  return el.viewed ? { ...el, rating: "Рейтинг не проставлен" } : el;
 };
 
 const filmsWithRating = Array.from(filmsFromServer, (el) => putRating(el));
 console.log(filmsWithRating);
+
+//* Объекты
+
+let user = {
+  name: "Иван",
+  age: 25,
+};
+console.log(user.age);
+user.country = "Russia";
+console.log(user.country);
+
+delete user.country;
+console.log(user);
+
+// let fruit = prompt("Какой фрукт купить?", "apple");
+// let bag = {
+//   [fruit]: 10, // имя свойства будет взято из переменной fruit
+// };
+// console.log(bag.apple);
+
+//! Задача 3.1
+const car = {
+  model: "Audi",
+  color: "white",
+  weight: 1850,
+  engine: "170 hp",
+};
+
+delete car.engine;
+console.log(car);
+
+//! Задача 3.2 В программе объявлена переменная goods, которая хранит объект со свойствами, описывающими товар. Сформируйте массив, который содержит в начале все названия свойств объекта, а потом все их значения. Результат выведите в консоль.
+
+const goods = {
+  title: "Самокат",
+  price: 6000,
+  good_id: 1,
+};
+
+const goods_array = Object.keys(goods).concat(Object.values(goods));
+console.log(goods_array);
+
+//! Задача 3.3 В программе заданы две переменные article и author, которые содержат объекты. Объект article содержит информацию о статье, а author — об авторе. Сформируйте новый объект, который содержит свойства объектов article и author. Результат выведите в консоль.
+
+const article = {
+  title: "Загадки дачного огурца",
+  text: "Огурец не перестает удивлять своими выходками. Хозяйка в недоумении",
+};
+const author = {
+  name: "Ричард М.В.",
+  age: 43,
+};
+
+const clone = Object.assign(article, author);
+console.log(clone);
+const arr = new Map([
+  ["key1", "value1"],
+  ["key2", "value2"],
+  ["key3", "value3"],
+]);
+console.log(arr.delete("key1"));
+console.log(arr);
+
+//! Задача 3.4 В программе задан массив array. Напишите функцию count(), которая считает количество элементов массива array и выводит в консоль сообщение, как в примере.
+
+array = [true, 4, "word", "10n"];
+
+function count(arr) {
+  console.log("Количество элементов в массиве:", arr.length);
+}
+count(array);
+
+//! Задача 3.5 В программе задан двумерный массив employee. Удалите у данного массива значение, у которого первый элемент hireDate, и добавьте новое значение ["jobName", "IT PROG"] в конец массива. Результат выведите в консоль.
+
+const employee = [
+  ["firstName", "Ivan"],
+  ["lastName", "Ivanov"],
+  ["hireDate", "21.10.2015"],
+];
+
+let indexToRemove = employee.findIndex((el) => el[0] === "hireDate");
+
+if (indexToRemove !== -1) {
+  employee.splice(indexToRemove, 1);
+}
+
+employee.push(["jobName", "IT PROG"]);
+console.log(employee);
+
+//! Задача 3.6 В программе задан двумерный массив array. Создайте и вызовите функцию countString(), которая считает количество значений массива array, у которых второй элемент является строкой. Функция countString() должна выводить в консоль сообщение, как в примере.
+
+array = [
+  ["boolean", true],
+  ["number", "asda"],
+  ["string", "word"],
+  ["object", {}],
+];
+function countString(arr) {
+  let count = 0;
+  for (let val of arr) {
+    console.log(val);
+    if (typeof val[1] === "string") {
+      count += 1;
+    }
+  }
+  console.log(`Количество строковых элементов в массиве: ${count}`);
+}
+
+countString(array);
