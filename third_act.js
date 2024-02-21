@@ -401,6 +401,7 @@ const author = {
 
 const clone = Object.assign(article, author);
 console.log(clone);
+//* объявление именнованного массива ччерез Map
 const arr = new Map([
   ["key1", "value1"],
   ["key2", "value2"],
@@ -455,3 +456,116 @@ function countString(arr) {
 }
 
 countString(array);
+
+//* Ключевое слово this
+
+// function move(newX, newY) {
+//   this.x = newX;
+//   this.y = newY;
+// }
+
+// function createHero(name, defaultX = 0, defaultY = 0) {
+//   return {
+//     name,
+//     x: defaultX,
+//     y: defaultY,
+//     move,
+//   };
+// }
+
+// const hero1 = createHero("dadad", 15, 30);
+// console.log(hero1);
+
+// hero1.move(10, 15);
+// console.log(hero1);
+
+// const hero = {
+//   heroName: "Герой #1",
+//   /* ... */
+//   sayNormal(message) {
+//     console.log(`${this.heroName}: ${message}`);
+//   },
+//   sayLouder(message) {
+//     console.log(`${this.heroName}: ${message.toUpperCase()}`);
+//   },
+// };
+// console.log(hero);
+
+// function say(message, isLouder) {
+//   let sayFn = isLouder ? hero.sayLouder : hero.sayNormal;
+//   sayFn = sayFn.bind(hero);
+//   sayFn("Привет!");
+// }
+
+// say("Привет!", false);
+
+//! Задача 4.1 В программе объявлены объекты pet_1 и pet_2. Напишите функцию getName() и присвойте ее объектам pet_1 и pet_2 в качестве метода. При вызове метода getName() он должен вернуть имя и возраст питомца через пробел. Решить задачу необходимо с использованием this.
+
+function getName() {
+  return `${this.name} ${this.age}`;
+}
+
+const pet_1 = {
+  name: "Шарик",
+  age: 10,
+};
+const pet_2 = {
+  name: "Жучка",
+  age: 5,
+};
+
+pet_1.getName = getName;
+pet_2.getName = getName;
+console.log(pet_1.getName());
+console.log(pet_2.getName());
+
+//! Задача 4.2 В программе объявлен объект input и функция sayHi(), которая выводит в консоль сообщение из примера. Используя метод присвоения контекста, свяжите контекст объекта input с функцией sayHi() и вызовите функцию sayHi()
+
+let input = {
+  id: 1,
+  value: "Добрый вечер",
+  firstName: "Григорий",
+  lastName: "Стрельников",
+};
+
+function sayHi() {
+  console.log(`${this.value}, ${this.firstName} ${this.lastName}!`);
+}
+
+//ИЛИ const sayHiInputContext = sayHi.bind(input)
+//sayHiInputContext
+
+sayHi.call(input);
+
+//! Задача 4.3 В программе объявлен объект pet со свойствами name и breed и функция getDescription(), которая выводит эту информацию, используя this. Привяжите к функции getDescription() контекст pet и присвойте получившуюся функцию переменной getDescription.
+
+const pet = {
+  name: "Диксон",
+  breed: "Немецкая овчарка",
+};
+
+function getDescription() {
+  console.log("Имя питомца: " + this.name + ", Порода: " + this.breed);
+}
+
+const getDescriptionBound = getDescription.bind(pet);
+
+getDescriptionBound();
+
+const hero = {
+  name: "Герой #1",
+  pet: null,
+  createPet() {
+    const pet = {
+      name: "Бобик",
+      say() {
+        console.log(`${this.name}: Гав!`);
+      },
+    };
+
+    this.pet = pet;
+  },
+};
+
+hero.createPet();
+hero.pet.say();
