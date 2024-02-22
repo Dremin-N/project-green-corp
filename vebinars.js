@@ -131,3 +131,73 @@ tickets.forEach((t) => {
 });
 
 console.log(obj);
+
+//! Объектно-ориентированное программирование
+
+class Computer {
+  constructor(os, cpu, gpu, ram, memory) {
+    this.OS = os;
+    this.CPU = cpu;
+    this.GPU = gpu;
+    this.RAM = ram;
+    this.memory = memory;
+  }
+  getInfo() {
+    return `Компютер на оперционной системе ${this.OS}, c ${this.RAM} оперативной памяти и процессором ${this.CPU}`;
+  }
+}
+
+let objGet = {
+  array: ["First", "Второй", "Третий"],
+  get lastElement() {
+    return this.array[this.array.length - 1];
+  },
+  set setArray(value) {
+    return (this.array = value);
+  },
+};
+objGet.setArray = [1, 2, 3, 4];
+console.log(objGet.setArray);
+console.log(objGet);
+console.log(objGet.lastElement);
+
+let car = {
+  model: "Desla",
+  autoParking: true,
+  maxSpeed: 100,
+};
+
+Object.defineProperty(car, "model", {
+  value: "Mopel",
+  writable: false,
+});
+
+console.log(car);
+car.model = "Desla";
+console.log(car);
+console.log(Object.getOwnPropertyDescriptor(car, "model"));
+
+Object.defineProperty(car, "maxSpeed", { configurable: false });
+console.log(Object.getOwnPropertyDescriptor(car, "maxSpeed"));
+delete car.maxSpeed;
+console.log(car);
+
+class Queue {
+  constructor(...elems) {
+    this._elems = [];
+    this.enqueue(...elems);
+  }
+  enqueue(...elems) {
+    elems.forEach((elems) => this._elems.push(elems));
+    return this._elems;
+  }
+  dequeue(count = 1) {
+    this._elems.splice(0, count);
+    return this._elems;
+  }
+}
+
+let queue = new Queue(10, 20, 55, 100);
+console.log(queue);
+queue.enqueue(12, 4, 6);
+console.log(queue);
