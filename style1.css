@@ -46,6 +46,7 @@ button {
   background: url("images/back.png") no-repeat;
   background-position: center;
   background-size: cover;
+  position: relative;
 }
 
 .about_info {
@@ -77,6 +78,14 @@ button {
 
 .about_img {
   width: 500px;
+}
+
+.orb-canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
 }
 
 @keyframes rotation {
@@ -469,7 +478,6 @@ footer {
     width: 100%;
     box-sizing: border-box;
   }
-
 }
 @media (max-width: 1024px) {
   .header_logo {

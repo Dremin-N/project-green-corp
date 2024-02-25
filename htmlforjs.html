@@ -18,15 +18,103 @@
       return `rgb(${r}, ${g}, ${b}, ${a / 100})`;
     }
   </script>
+  <style type="text/css">
+    canvas {
+      border: 1px solid gray;
+
+    }
+  </style>
 </head>
 
 <body>
   <h1>Hello JS!</h1>
-  1. Создать переменную num, в которой хранится любое число в диапазоне от 4 до 1067.
-  2. при помощи переменной num написать фразу "По шоссе едет num машин"
+  <p>1. Создать переменную num, в которой хранится любое число в диапазоне от 4 до 1067.
+    2. при помощи переменной num написать фразу "По шоссе едет num машин"</p>
+  <canvas id="canvas" width="500" height="500"></canvas>
   <script>
     document.body.style.background = getColor(getRandom(101));
   </script>
+
+  <script src="canvas1.js"></script>
+  <!-- <script>
+    let canvas = document.getElementById("canvas");
+    let context = canvas.getContext("2d");
+    context.beginPath();
+    context.moveTo(100, 100);
+    context.lineTo(200, 100);
+    context.strokeStyle = "#e74c3c";
+    context.closePath();
+    context.stroke();
+
+
+
+    context.beginPath();
+    context.moveTo(100, 150);
+    context.lineTo(200, 150);
+    context.strokeStyle = "#16a085"
+    context.closePath();
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(100, 200);
+    context.lineTo(200, 200);
+    context.strokeStyle = "#2980b9";
+    context.closePath();
+    context.stroke();
+
+    context.fillStyle = "#ff3d00";
+    context.fillRect(10, 10, 100, 100);
+
+    context.fillStyle = "#0bdd38";
+    context.fillRect(120, 10, 100, 100);
+
+    context.fillStyle = "#2e77da";
+    context.fillRect(10, 120, 100, 100);
+
+    context.fillStyle = "#ffd200";
+    context.fillRect(120, 120, 100, 100);
+
+    let radius = 2;
+    for (; radius <= 100; radius += 2) {
+      context.beginPath();
+      context.arc(150, 150, radius, 20, 0, 2 * Math.PI)
+      context.closePath();
+      context.strokeStyle = "black"
+      context.stroke();
+    }
+
+    // let positionX = 0;
+    // function animate() {
+    //   context.clearRect(0, 0, canvas.width, canvas.height);
+    //   positionX++;
+    //   context.fillRect(positionX, 0, 50, 50);
+
+    //   if (positionX > canvas.width) {
+    //     positionX = 0;
+    //   }
+
+    //   requestAnimationFrame(animate);
+    // }
+
+    // animate()
+
+    function drawCircle(x, y) {
+      context.beginPath();
+      context.arc(x, y, 30, 0, 2 * Math.PI);
+      context.stroke();
+    }
+
+    function handleMouseMove(event) {
+      const x = event.offsetX;
+      const y = event.offsetY;
+
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      drawCircle(x, y)
+    }
+
+    document.addEventListener("mousemove", handleMouseMove)
+  </script> -->
   <script src="third_act.js"></script>
 </body>
 
