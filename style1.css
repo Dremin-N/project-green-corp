@@ -211,6 +211,7 @@ button {
 
 .promo__image {
   background-image: url(images/promo.jpg);
+  background-position: center center;
   background-size: cover;
   flex-shrink: 0;
   width: 50%;
