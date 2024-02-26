@@ -108,9 +108,13 @@ header {
   font-size: 18px;
   border-radius: 7px;
   color: aliceblue;
-  background-color: rgb(255, 136, 1);
-  box-shadow: 5px 5px 13px orangered;
+  background-color: #ff8801;
+  box-shadow: 5px 5px 13px #ff4500;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: #f35f4b;
 }
 
 .advantage {
@@ -153,4 +157,137 @@ header {
   text-align: center;
   font-size: 20px;
   opacity: 0.7;
+}
+
+.about {
+  display: flex;
+}
+
+.about__img {
+  padding-top: 100px;
+  padding-bottom: 40px;
+  padding-right: 40px;
+}
+
+.about__content {
+  padding-top: 105px;
+}
+
+.about__content h2 {
+  font-size: 48px;
+  color: #2f2e2e;
+  margin-bottom: 30px;
+}
+
+.about__content hr {
+  border: 2px solid #ff4500;
+  border-radius: 50px;
+  margin-bottom: 30px;
+  width: 150px;
+}
+
+.about__content p {
+  color: #2f2e2e;
+  opacity: 0.8;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.about button {
+  margin-top: 30px;
+  background-color: #ff8801;
+  box-shadow: 5px 5px 7px #ff4500;
+  padding: 10px 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+.goods {
+  background-image: url("https://173171.lp.tobiz.net/img/47-fon.png");
+  background-position: center center;
+  background-repeat: repeat;
+  padding-bottom: 50px;
+}
+
+.goods .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.goods h2 {
+  margin-top: 75px;
+  font-size: 48px;
+  color: #2f2e2e;
+}
+
+.goods hr {
+  border: 1px solid #ff8801;
+  box-shadow: 1px 1px 5px #ff4500;
+  width: 200px;
+}
+
+.goods p {
+  color: #2f2e2e;
+  opacity: 0.9;
+  font-size: 20px;
+}
+
+.goods__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.item {
+  width: 48%;
+  border: 1px solid rgb(181, 181, 181);
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px #a09c9c;
+  display: flex;
+  gap: 20px;
+}
+
+.item img {
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.item div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.item h4 {
+  padding-top: 15px;
+  font-size: 20px;
+  text-decoration: underline;
+  font-weight: lighter;
+}
+
+.item p {
+  line-height: 1.1;
+  opacity: 0.8;
+  font-weight: lighter;
+}
+.item span {
+  font-size: 24px;
+}
+
+.item button {
+  background-color: #ff8801;
+  box-shadow: 2px 2px 5px #ff4500;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: aliceblue;
+  font-size: 20px;
+  width: 55%;
+  margin-bottom: 20px;
 }
