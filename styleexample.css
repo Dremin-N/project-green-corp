@@ -35,10 +35,12 @@ header {
 }
 
 .container {
-  max-width: 1232px;
+  max-width: 1170px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .navigation a {
@@ -102,7 +104,7 @@ header {
   text-align: center;
 }
 
-.banner__content button {
+.btn {
   margin-top: 20px;
   padding: 20px 70px;
   font-size: 18px;
@@ -111,6 +113,7 @@ header {
   background-color: #ff8801;
   box-shadow: 5px 5px 13px #ff4500;
   cursor: pointer;
+  z-index: 2;
 }
 
 button:hover {
@@ -290,4 +293,116 @@ button:hover {
   font-size: 20px;
   width: 55%;
   margin-bottom: 20px;
+}
+
+.banner_2 {
+  background-image: url("https://173171.lp.tobiz.net/img/1920x0/cfea4911c8e818a5b528a5b2947b0f49.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.banner_2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+}
+
+.banner_2__content {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 130px;
+  gap: 30px;
+  align-items: center;
+}
+
+.banner_2__content h2 {
+  font-size: 70px;
+  font-weight: bold;
+  color: aliceblue;
+  text-align: center;
+  z-index: 3;
+}
+
+.banner_2__content p {
+  color: aliceblue;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 100;
+  font-size: 26px;
+  text-align: center;
+  z-index: 3;
+}
+
+.review {
+  background-image: url("https://173171.lp.tobiz.net/img/47-fon.png");
+  background-position: center center;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding-bottom: 50px;
+}
+.review__content {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+hr {
+  border: 1px solid #ff8801;
+  box-shadow: 1px 1px 5px #ff4500;
+  width: 200px;
+}
+
+.review__content h2 {
+  font-size: 48px;
+  color: #2f2e2e;
+}
+
+.review__content p {
+  color: #2f2e2e;
+  opacity: 0.9;
+  font-size: 20px;
+}
+
+.review__card {
+  display: flex;
+  gap: 35px;
+}
+
+.review__card img::before {
+  background-color: white;
+}
+.review__card img {
+  border: 10px solid white;
+}
+.review__card div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+h5 {
+  text-decoration: underline;
+  font-size: 26px;
+  font-weight: lighter;
+  color: #2f2e2e;
+}
+
+.review__card p {
+  color: #2f2e2e;
+  opacity: 0.9;
+  font-size: 20px;
 }
