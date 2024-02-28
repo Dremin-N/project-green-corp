@@ -2,23 +2,25 @@
 var elements = document.getElementsByClassName("target");
 
 var lastElement = elements[elements.length - 1];
-
-console.log(lastElement.tagName.toLocaleLowerCase());
+console.log(lastElement.nodeName);
+console.log(lastElement.nodeType);
+console.log(lastElement.firstChild.nodeValue);
+console.log(lastElement.tagName.toLowerCase());
 
 //! Задача 1.5 В HTML-документе существует тег с классом price и числовым значением. Напишите скрипт, который увеличивает в теге значение цены в два раза.
 
 // let price = document.querySelector(".price");
 
-// price.innerHTML = !isNaN(Number(price.innerHTML) * 2)
-//   ? price.innerHTML * 2
-//   : price.innerHTML;
+// price.innerText = !isNaN(Number(price.innerHTML) * 2)
+//   ? price.innerText * 2
+//   : price.innerText;
 
 //! Задача 1.6 В HTML-документе есть тег <p> c классом links. Внутри этого элемента указана просто текстовая ссылка без тега <a>. Напишите скрипт, который заменит этот текст на тег <a>, а в качестве содержимого тега <a> укажет изначальный текст.
 
 var element = document.querySelector(".links");
 console.log(element.innerHTML);
 
-let text = element.innerHTML;
+let text = element.innerText;
 
 element.innerHTML = `<a href='https://${text}'>${text}</a>`;
 
@@ -41,7 +43,6 @@ console.log(price);
 function priceSum(arr) {
   let sum = 0;
   arr.forEach((el) => {
-    console.log(el.innerText);
     sum += Number(el.innerText);
   });
   return sum;
