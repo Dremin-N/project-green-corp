@@ -3,10 +3,18 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  position: sticky;
-  background-color: #fff;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0);
   top: 0px;
+  left: 0;
+  right: 0;
   z-index: 1;
+  transition: 0.25s ease;
+}
+
+.header__scrolled {
+  background-color: #fff;
+  box-shadow: 0 12px 34px -11px rgba(65, 62, 101, 0.1);
 }
 
 body {
@@ -47,6 +55,7 @@ button {
   background-position: center;
   background-size: cover;
   position: relative;
+  padding-top: 200px;
 }
 
 .about_info {

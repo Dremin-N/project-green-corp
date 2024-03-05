@@ -18,7 +18,6 @@ function initIncreaseNumberAnimation() {
   let element = document.querySelector(".features__clients-count");
   increaseNumberAnimationStep(0, element, 5000);
 }
-initIncreaseNumberAnimation();
 
 document
   .querySelector("#budget")
@@ -39,3 +38,23 @@ document
       document.querySelector(".form__form").removeChild(otherInput);
     }
   });
+
+let animationInited = false;
+
+function updateScroll(event) {
+  if (window.scrollY > 0) {
+    document.querySelector("header").classList.add("header__scrolled");
+  } else {
+    document.querySelector("header").classList.remove("header__scrolled");
+  }
+  let countElementPosition = document.querySelector(
+    ".features__clients-count"
+  ).offsetTop;
+  let windowBottomPosition = window.scrollY + window.innerHeight;
+  if (windowBottomPosition >= countElementPosition && !animationInited) {
+    initIncreaseNumberAnimation();
+    animationInited = true;
+  }
+}
+
+window.addEventListener("scroll", updateScroll);
